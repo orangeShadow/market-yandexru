@@ -298,7 +298,12 @@ class CreateXML
     {
         header("Content-Type: text/xml");
 
-        $this->constructShop();
+        $dt = new \DateTime();
+        $yml_catalog = $this->dom->createElement('yml_catalog');
+        $yml_catalog->setAttribute('date', $dt->format('Y-m-d H:i'));
+
+
+        $yml_catalog->appendChild($this->constructShop());
 
         return $this->dom->saveXML();
     }
