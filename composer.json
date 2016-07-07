@@ -1,0 +1,18 @@
+{
+    "name": "orangeshadow/market-yandexru",
+    "description": "XML выгрузка в Yandex Market",
+    "license": "Apache",
+    "authors": [
+        {
+            "name": "Anton Alexeev",
+            "email": "alexeev.sker@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": { "OrangeShadow\\YandexMarket\\": "src/" }
+    },
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=5.4.0"
+    },
+}
