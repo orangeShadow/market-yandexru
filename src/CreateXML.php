@@ -30,7 +30,9 @@ class CreateXML
     {
         $this->dom = new DOMDocument('1.0', 'UTF-8');
         $this->dom->formatOutput = true;
-
+        $implementation = new DOMImplementation();
+        $this->dom->appendChild($implementation->createDocumentType('yml_catalog','','shops.dtd'));
+        
         if (is_callable($cleanFunction)) {
             $this->cleanFunction = $cleanFunction;
         }
