@@ -217,6 +217,7 @@ class CreateXML
             $offerElement = $this->dom->createElement('offer');
 
             $offerElement->setAttribute('id', $offer['id']);
+            $offerElement->setAttribute('type','vendor.model');
             unset($offer['id']);
 
             if (isset($offer['available'])) {
