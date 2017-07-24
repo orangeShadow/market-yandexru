@@ -2,6 +2,7 @@
 
 use DOMDocument;
 use DOMElement;
+use DOMImplementation;
 
 /**
  * Class CreateXML
