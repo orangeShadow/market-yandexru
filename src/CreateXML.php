@@ -22,7 +22,7 @@ class CreateXML
             'picture', 'store', 'pickup', 'delivery', 'local_delivery_cost','typePrefix', 
             'vendor', 'vendorCode', 'name' ,'model', 'description', 'sales_notes', 'manufacturer_warranty',
             'seller_warranty','country_of_origin', 'downloadable', 'age','barcode','cpa',
-            'rec','expiry','weight','dimensions','param']
+            'rec','expiry','weight','dimensions','param'];
 
 
     /**
