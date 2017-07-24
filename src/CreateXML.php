@@ -144,7 +144,7 @@ class CreateXML
 
     /**
      * Создаем категории товаров
-     * @param $categories  содержит сущность(массив) с ключами: name,id,parentId
+     * @param array $categories  содержит сущность(массив) с ключами: name,id,parentId
      * @throws \Exception
      */
     public function setCategories($categories)
@@ -179,7 +179,7 @@ class CreateXML
 
     /**
      * Создание предложений
-     * @param $offers должен содержать массив сущностей: id,available,cbid,url,price,currencyId,categoryId,picture,typePrefix,vendor,model,description,delivery,pickup,local_delivery_cost
+     * @param array $offers должен содержать массив сущностей: id,available,cbid,url,price,currencyId,categoryId,picture,typePrefix,vendor,model,description,delivery,pickup,local_delivery_cost
      * @throws \Exception
      */
     public function setOffers($offers)
