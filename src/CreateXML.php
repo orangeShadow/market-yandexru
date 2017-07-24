@@ -17,6 +17,12 @@ class CreateXML
     protected $xmlElements = [];
     protected $cleanFunction;
     protected $constructShopFlag = false;
+    
+    protected $offersElementOrder = ['url', 'price', 'currencyId', 'categoryId', 'market_category', 
+            'picture', 'store', 'pickup', 'delivery', 'local_delivery_cost','typePrefix', 
+            'vendor', 'vendorCode', 'name' ,'model', 'description', 'sales_notes', 'manufacturer_warranty',
+            'seller_warranty','country_of_origin', 'downloadable', 'age','barcode','cpa',
+            'rec','expiry','weight','dimensions','param']
 
 
     /**
@@ -196,7 +202,7 @@ class CreateXML
 
             if (isset($offer['url']) && strlen($offer["url"])>512)
                 throw new \Exception('Ошибка при создании торгового предложения, url больше 512 символов' . print_r($offer, true));
-
+                
             if (!isset($offer['model']) && !isset($offer["name"]))
                 throw new \Exception('Ошибка при создании торгового предложения, нет model(name)' . print_r($offer, true));
 
@@ -230,9 +236,10 @@ class CreateXML
                 unset($offer['bid']);
             }
 
-            foreach ($offer as $key => $property) {
-
-
+            foreach ($this->offersElementOrder as $key) {
+                if(!isset($offer[$key])) continue;                
+                $property = $offer[$key];
+                    
                 if ($key == "price" && is_array($property)) {
 
                     //price может передаваться как массив ["value"=>1400.00,"from"=>true];
