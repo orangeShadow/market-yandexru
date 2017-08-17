@@ -148,6 +148,26 @@ class CreateXML
         array_push($this->xmlElements, $currenciesElement);
     }
 
+    /**
+     * Указание стоимости и сроков курьерской доставки по своему региону
+     * @pararm array $options
+     */
+    public function setDeliveryOptions($options)
+    {
+        $deliveryOptions = $this->dom->createElement('delivery-options');
+        
+        foreach($options as $opt) {
+            
+            $option = $this->dom->createElement('option');
+        
+            foreach ($opt as $key => $value) {
+                $option->setAttribute($key, $value);
+            }
+            $deliveryOptions->appendChild($option);
+        }
+        
+        array_push($this->xmlElements, $deliveryOptions);
+    }
 
     /**
      * Создаем категории товаров
