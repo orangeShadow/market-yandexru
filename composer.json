@@ -1,7 +1,7 @@
 {
     "name": "orangeshadow/market-yandexru",
     "description": "XML выгрузка в Yandex Market",
-    "license": "Apache",
+    "license": "MIT",
     "authors": [
         {
             "name": "Anton Alexeev",
